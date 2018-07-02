@@ -26,3 +26,5 @@
 /config/master.key
 
 Gemfile.lock
+
+/config/database.yml
