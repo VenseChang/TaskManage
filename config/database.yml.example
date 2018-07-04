@@ -4,7 +4,19 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: 127.0.0.1
+  username: <%= ENV['TRAINING_DB_ACCOUNT'] %>
+  password: <%= ENV['TRAINING_DB_PASSWORD'] %>
+
 
 development:
   database: task_manage_development
   <<: *default
+
+test:
+  <<: *default
+  database: task_manage_test
+
+production:
+  <<: *default
+  database: task_manage_production
