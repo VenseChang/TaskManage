@@ -3,6 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'rspec', '~> 3.7'
+gem 'rails-i18n', '~> 5.1', '>= 5.1.1'
+gem 'slim', '~> 3.0', '>= 3.0.9'
+gem 'aasm', '~> 4.11'
+# Simple Form
+gem 'simple_form', '~> 4.0', '>= 4.0.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
 # Use postgresql as the database for Active Record
