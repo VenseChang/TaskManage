@@ -1,0 +1,7 @@
+zh-TW:
+  pending: '待處理'
+  handling: '進行中'
+  finished: '完成'
+  extremely_urgent: '最急件'
+  urgent: '急件'
+  ordinary: '一般件'
