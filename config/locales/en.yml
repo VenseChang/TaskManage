@@ -30,4 +30,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  pending: 'pending'
+  handling: 'handling'
+  finished: 'finish'
+  extremely_urgent: 'extremely urgent'
+  urgent: 'urgent'
+  ordinary: 'ordinary'

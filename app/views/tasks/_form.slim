@@ -1,0 +1,12 @@
+= simple_form_for @task do |f| 
+    = f.input :title, label: "標題："
+    = f.input :content, label: "任務內容："
+    = f.input :end_time, label: "任務中止時間："
+    |優先程度：
+    = f.select :priority, options_for_select(Task.priority_select_tag, selected: @task.priority)
+    br/
+    |任務狀態：
+    = f.select :status, options_for_select(Task.status_select_tag, selected: @task.status)
+    = f.input :user_id, label: "建立者", input_html: {value: 1}
+    = f.submit '送出'
+
