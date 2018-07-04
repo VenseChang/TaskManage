@@ -1,0 +1,15 @@
+= I18n.t(@task.priority)
+br
+| 標題 ： 
+= @task.title
+br
+| 內容： 
+= @task.content
+br
+| 結束時間： 
+= @task.end_time_format
+br
+| 任務狀態：
+= I18n.t(@task.status)
+br
+= link_to "上一頁", tasks_path

@@ -1,0 +1,19 @@
+= link_to  "新增", new_task_path
+
+table
+  tr
+    th 標題
+    th 結束時間
+    th 程度
+    th 狀態
+    th
+  - @tasks.each do |task|
+    tr
+      td = link_to "##{task.id} #{task.title}", task_path(task) 
+      td = task.end_time_format  
+      td = I18n.t(task.priority)
+      td = I18n.t(task.status)
+      td 
+        = link_to "修改", edit_task_path(task)
+        |       
+        = link_to "刪除", task_path(task), method: :delete
