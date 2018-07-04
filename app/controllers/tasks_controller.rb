@@ -9,10 +9,11 @@ class TasksController < ApplicationController
   end
   
   def create
-    user = User.find(1)
+    user = User.first
     @task = Task.new(task_params)
     @task.users << user
-    return redirect_to tasks_path if @task.save
+    return redirect_to tasks_path, notice: I18n.t(:new_success_msg, scope: :common) if @task.save
+    flash[:notice] = I18n.t(:new_failed_msg, scope: :common)
     render :new
   end
   
@@ -20,7 +21,8 @@ class TasksController < ApplicationController
   end
   
   def update
-    return redirect_to tasks_path if @task.update(task_params)
+    return redirect_to tasks_path, notice: I18n.t(:update_success_msg, scope: :common) if @task.update(task_params)
+    flash[:notice] = I18n.t(:update_failed_msg, scope: :common)
     render :edit
   end
   
@@ -28,7 +30,7 @@ class TasksController < ApplicationController
   end
   
   def destroy
-    @task.destroy
+    flash[:notice] = (@task.destroy) ? I18n.t(:destroy_success_msg, scope: :common) : I18n.t(:destroy_failed_msg, scope: :common)
     redirect_to tasks_path
   end
   

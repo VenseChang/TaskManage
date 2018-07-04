@@ -30,9 +30,30 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  pending: 'pending'
-  handling: 'handling'
-  finished: 'finish'
-  extremely_urgent: 'extremely urgent'
-  urgent: 'urgent'
-  ordinary: 'ordinary'
+  common: 
+    new_success_msg: "Create Success"
+    new_failed_msg: "Create Failed"
+    update_success_msg: "Update Success"
+    update_failed_msg: "Update Failed"
+    destroy_success_msg: "destroy Success"
+    destroy_failed_msg: "destroy Failed"
+  task:
+    select_tag:
+      pending: 'pending'
+      handling: 'handling'
+      finished: 'finish'
+      extremely_urgent: 'extremely urgent'
+      urgent: 'urgent'
+      ordinary: 'ordinary'
+    view: 
+      title: 'Title'
+      content: "Content"
+      end_time: "End Time"
+      priority: 'Priority'
+      status: 'Task State'
+      creator: 'Creator'
+      submit_button: 'submit'
+      new_link: 'new'
+      edit_link: 'edit'
+      destroy_link: 'destroy'
+      back_link: 'Back'

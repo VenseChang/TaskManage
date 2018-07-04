@@ -1,7 +1,28 @@
 zh-TW:
-  pending: '待處理'
-  handling: '進行中'
-  finished: '完成'
-  extremely_urgent: '最急件'
-  urgent: '急件'
-  ordinary: '一般件'
+  common: 
+    new_success_msg: "新增成功"
+    new_failed_msg: "新增失敗"
+    update_success_msg: "修改成功"
+    update_failed_msg: "修改失敗"
+    destroy_success_msg: "刪除成功"
+    destroy_failed_msg: "刪除失敗"
+  task:
+    select_tag: 
+      pending: '待處理'
+      handling: '進行中'
+      finished: '完成'
+      extremely_urgent: '最急件'
+      urgent: '急件'
+      ordinary: '一般件'
+    view: 
+      title: '任務標題'
+      content: "任務內容"
+      end_time: '結束時間'
+      priority: '優先程度'
+      status: '任務狀態'
+      creator: '建立者'
+      submit_button: '送出'
+      new_link: '新增'
+      edit_link: '修改'
+      destroy_link: '刪除'
+      back_link: '上一頁'
