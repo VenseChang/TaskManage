@@ -10,6 +10,11 @@
   </head>
 
   <body>
+    <p>
+      <%= notice %>
+    </p>
     <%= yield %>
+    <%= link_to "中文版", url_for(locale: "zh-TW") %>
+    <%= link_to "English", url_for(locale: "en") %>
   </body>
 </html>
