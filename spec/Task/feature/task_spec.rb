@@ -40,3 +40,17 @@ RSpec.describe Task, type: :feature do
     end
   end
 end
+
+RSpec.describe Task, type: :feature do
+  before :each do
+    @task_1 = Task.create(title: '任務一', content: '內容', priority: 'ordinary', status: 'pending', end_time: Time.now)
+    @task_2 = Task.create(title: '任務二', content: '內容', priority: 'ordinary', status: 'pending', end_time: Time.now)
+  end
+
+  describe "step 11" do
+    it "任務列表以建立時間排序" do
+      visit '/'
+      expect(page.body.index(@task_1.title)).to be > page.body.index(@task_2.title)
+    end
+  end
+end
