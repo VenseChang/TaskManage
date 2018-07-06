@@ -1,7 +1,7 @@
 class Task < ApplicationRecord
   has_and_belongs_to_many :users
   has_and_belongs_to_many :tags
-  
+   
   include AASM
   enum priority: {
     extremely_urgent: 1,
@@ -38,11 +38,11 @@ class Task < ApplicationRecord
 
 
   def self.status_select_tag
-    statuses.map{|k, v| [I18n.t(k), k]}
+    statuses.map{|k, v| [I18n.t(k, scope: [:task, :select_tag]), k]}
   end
 
   def self.priority_select_tag
-    priorities.map{|k, v| [I18n.t(k), k]}
+    priorities.map{|k, v| [I18n.t(k, scope: [:task, :select_tag]), k]}
   end
 
   def end_time_format

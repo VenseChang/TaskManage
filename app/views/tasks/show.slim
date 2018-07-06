@@ -1,15 +1,15 @@
-= I18n.t(@task.priority)
+= t(@task.priority, scope: [:task, :view])
 br
-| 標題 ： 
+= t(:title, scope: [:task, :view])
 = @task.title
 br
-| 內容： 
+= t(:content, scope: [:task, :view])
 = @task.content
 br
-| 結束時間： 
+= t(:end_time, scope: [:task, :view]) 
 = @task.end_time_format
 br
-| 任務狀態：
-= I18n.t(@task.status)
+= t(:status, scope: [:task, :view])
+= t(@task.status, scope: [:task, :view])
 br
-= link_to "上一頁", tasks_path
+= link_to t(:back_link, scope: [:task, :view]), tasks_path

@@ -1,19 +1,19 @@
-= link_to  "新增", new_task_path
+= link_to  t(:new_link, scope: [:task, :view]), new_task_path
 
 table
   tr
-    th 標題
-    th 結束時間
-    th 程度
-    th 狀態
+    th = t(:title, scope: [:task, :view])
+    th = t(:end_time, scope: [:task, :view])
+    th = t(:priority, scope: [:task, :view])
+    th = t(:status, scope: [:task, :view])
     th
   - @tasks.each do |task|
     tr
       td = link_to "##{task.id} #{task.title}", task_path(task) 
       td = task.end_time_format  
-      td = I18n.t(task.priority)
-      td = I18n.t(task.status)
+      td = I18n.t(task.priority, scope: [:task, :select_tag])
+      td = I18n.t(task.status, scope: [:task, :select_tag])
       td 
-        = link_to "修改", edit_task_path(task)
+        = link_to t(:edit_link, scope: [:task, :view]), edit_task_path(task)
         |       
-        = link_to "刪除", task_path(task), method: :delete
+        = link_to t(:destroy_link, scope: [:task, :view]), task_path(task), method: :delete, id: "#{task.id}_delete_btn"
