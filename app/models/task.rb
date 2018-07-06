@@ -1,6 +1,12 @@
 class Task < ApplicationRecord
   has_and_belongs_to_many :users
   has_and_belongs_to_many :tags
+  
+  validates :title, presence: true
+  validates :content, presence: true
+  validates :priority, presence: true
+  validates :status, presence: true
+  validates :end_time, presence: true
    
   include AASM
   enum priority: {
