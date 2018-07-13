@@ -37,6 +37,8 @@ en:
     update_failed_msg: "Update Failed"
     destroy_success_msg: "destroy Success"
     destroy_failed_msg: "destroy Failed"
+    views:
+      search: 'search'
   task:
     select_tag:
       pending: 'pending'

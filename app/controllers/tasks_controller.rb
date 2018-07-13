@@ -1,8 +1,8 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:edit, :update, :show, :destroy]
   def index
-    @tasks = Task.order(created_at: :desc)
-    @tasks = Task.order(params.require(:sort_by) => params.require(:sort_type)) if params[:sort_by] && params[:sort_type]
+    @q = Task.ransack(params[:q])
+    @tasks = @q.result
   end
   
   def new

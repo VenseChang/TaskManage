@@ -6,6 +6,8 @@ zh-TW:
     update_failed_msg: "修改失敗"
     destroy_success_msg: "刪除成功"
     destroy_failed_msg: "刪除失敗"
+    views:
+      search: '搜尋'
   task:
     select_tag: 
       pending: '待處理'

@@ -1,12 +1,24 @@
 = link_to  t(:new_link, scope: [:task, :view]), new_task_path
 
+= search_form_for @q do |f|
+  = f.label "標題或內容："
+  = f.search_field :title_or_content_cont, value: ''
+  br
+  = f.label "優先權："
+  = f.select :priority_eq, options_for_select(Task.priority_select_tag_for_ransack), include_blank: "全部"
+  br
+  = f.label "狀態："
+  = f.select :status_eq, options_for_select(Task.status_select_tag_for_ransack), include_blank: "全部"
+  br
+  = f.submit t(:search, scope: [:common, :views]), id: "search"
+
 table
   tr
     th = t(:title, scope: [:task, :view])
-    th = link_to t(:end_time, scope: [:task, :view]), tasks_path(sort_by: :end_time, sort_type: :asc)
+    th = sort_link(@q, :end_time, t(:end_time, scope: [:task, :view]), default_order: :asc)
     th = t(:priority, scope: [:task, :view])
     th = t(:status, scope: [:task, :view])
-    th = link_to t(:created_at, scope: [:task, :view]), tasks_path(sort_by: :created_at, sort_type: :desc)
+    th = sort_link(@q, :created_at, t(:created_at, scope: [:task, :view]), default_order: :desc)
     th
   - @tasks.each do |task|
     tr
