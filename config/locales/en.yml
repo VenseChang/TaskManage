@@ -48,7 +48,8 @@ en:
     view: 
       title: 'Title'
       content: "Content"
-      end_time: "End Time"
+      created_at: 'Create time'
+      end_time: "Deadline"
       priority: 'Priority'
       status: 'Task State'
       creator: 'Creator'
