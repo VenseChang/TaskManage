@@ -37,18 +37,21 @@ en:
     update_failed_msg: "Update Failed"
     destroy_success_msg: "destroy Success"
     destroy_failed_msg: "destroy Failed"
+    views:
+      search: 'search'
   task:
     select_tag:
       pending: 'pending'
       handling: 'handling'
       finished: 'finish'
-      extremely_urgent: 'extremely urgent'
-      urgent: 'urgent'
-      ordinary: 'ordinary'
+      high: 'high'
+      middle: 'middle'
+      low: 'low'
     view: 
       title: 'Title'
       content: "Content"
-      end_time: "End Time"
+      created_at: 'Create time'
+      end_time: "Deadline"
       priority: 'Priority'
       status: 'Task State'
       creator: 'Creator'

@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'ransack', '~> 1.7'
 gem 'rails-i18n', '~> 5.1', '>= 5.1.1'
 gem 'slim', '~> 3.0', '>= 3.0.9'
 gem 'aasm', '~> 4.11'

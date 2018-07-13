@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Task, type: :model do
   before :each do
     @user = User.create(email: "task@task.task", password: "Hello World!")
-    @task = Task.new(title: '標題', content: '內容', priority: 'ordinary', status: 'pending', end_time: Time.now, user_id: @user.id)
+    @task = Task.new(title: '標題', content: '內容', priority: 'low', status: 'pending', end_time: Time.now, user_id: @user.id)
   end
 
   describe "新增任務" do
