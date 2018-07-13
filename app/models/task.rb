@@ -50,8 +50,4 @@ class Task < ApplicationRecord
   def self.priority_select_tag
     priorities.map{|k, v| [I18n.t(k, scope: [:task, :select_tag]), k]}
   end
-
-  def end_time_format
-    end_time.strftime('%Y-%m-%d %H:%M:%S')
-  end
 end

@@ -3,16 +3,18 @@
 table
   tr
     th = t(:title, scope: [:task, :view])
-    th = t(:end_time, scope: [:task, :view])
+    th = link_to t(:end_time, scope: [:task, :view]), tasks_path(sort_by: :end_time, sort_type: :asc)
     th = t(:priority, scope: [:task, :view])
     th = t(:status, scope: [:task, :view])
+    th = link_to t(:created_at, scope: [:task, :view]), tasks_path(sort_by: :created_at, sort_type: :desc)
     th
   - @tasks.each do |task|
     tr
       td = link_to "##{task.id} #{task.title}", task_path(task) 
-      td = task.end_time_format  
+      td = task.time_format(task.end_time)  
       td = I18n.t(task.priority, scope: [:task, :select_tag])
       td = I18n.t(task.status, scope: [:task, :select_tag])
+      td = task.time_format(task.created_at)
       td 
         = link_to t(:edit_link, scope: [:task, :view]), edit_task_path(task)
         |       
