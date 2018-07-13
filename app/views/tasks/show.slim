@@ -1,4 +1,4 @@
-= t(@task.priority, scope: [:task, :view])
+= t(@task.priority, scope: [:task, :select_tag])
 br
 = t(:title, scope: [:task, :view])
 = @task.title
@@ -7,9 +7,9 @@ br
 = @task.content
 br
 = t(:end_time, scope: [:task, :view]) 
-= @task.end_time_format
+= @task.time_format(@task.end_time)
 br
 = t(:status, scope: [:task, :view])
-= t(@task.status, scope: [:task, :view])
+= t(@task.status, scope: [:task, :select_tag])
 br
 = link_to t(:back_link, scope: [:task, :view]), tasks_path

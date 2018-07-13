@@ -1,7 +1,8 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:edit, :update, :show, :destroy]
   def index
-    @tasks = Task.order(created_at: :desc)
+    @q = Task.ransack(params[:q])
+    @tasks = @q.result
   end
   
   def new
