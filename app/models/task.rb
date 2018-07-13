@@ -17,7 +17,8 @@ class Task < ApplicationRecord
 
   aasm column: :priority, enum: true do
     state :ordinary, initial: true
-    state :extremely_urgent, :urgent
+    state :extremely_urgent
+    state :urgent
 
   end
 
@@ -43,15 +44,19 @@ class Task < ApplicationRecord
   end
 
 
+  def self.status_select_tag_for_ransack
+    statuses.map{|k, v| [I18n.t(k, scope: [:task, :select_tag]), v]}
+  end
+
+  def self.priority_select_tag_for_ransack
+    priorities.map{|k, v| [I18n.t(k, scope: [:task, :select_tag]), v]}
+  end
+
   def self.status_select_tag
     statuses.map{|k, v| [I18n.t(k, scope: [:task, :select_tag]), k]}
   end
 
   def self.priority_select_tag
     priorities.map{|k, v| [I18n.t(k, scope: [:task, :select_tag]), k]}
-  end
-
-  def end_time_format
-    end_time.strftime('%Y-%m-%d %H:%M:%S')
   end
 end
